@@ -188,5 +188,9 @@ confirming the speedup costs nothing in correctness.
 | Median latency (p50) | ~4,350 ns | ~42 ns | **~104×** |
 | Tail latency (p99.9) | ~110,000 ns | ~275 ns | **~400×** |
 
+![Latency distribution across percentiles](assets/chart_latency.png)
+
 The key result is the **shape**: the naive engine slows down *linearly* as the book fills
 (O(N)), while Stage 4 stays flat (O(1)) — so the gap widens the busier the book gets.
+
+![Per-operation cost as the book grows](assets/chart_scaling.png)
